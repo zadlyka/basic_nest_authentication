@@ -13,6 +13,8 @@ const appConfig = () => {
       database: process.env.DB_NAME || 'basic_nest_auth',
       entities: ['dist/**/*.entity{.js, .ts}'],
       migrations: ['dist/migrations/*{.js, .ts}'],
+      seeds: ['dist/seeders/*{.ts,.js}'],
+      factories: ['dist/**/*.factory{.ts,.js}'],
       synchronize: false,
     },
     jwt: {
