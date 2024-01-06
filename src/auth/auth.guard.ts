@@ -7,8 +7,8 @@ import {
 import { ConfigService } from '@nestjs/config';
 import { Reflector } from '@nestjs/core';
 import { JwtService } from '@nestjs/jwt';
-import { Permission } from 'src/role/enums/permission.enum';
-import { User } from 'src/user/entities/user.entity';
+import { Permission } from '../role/enums/permission.enum';
+import { User } from '../user/entities/user.entity';
 
 export const IS_PUBLIC_KEY = 'public';
 export const Public = () => SetMetadata(IS_PUBLIC_KEY, true);

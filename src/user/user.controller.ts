@@ -10,8 +10,8 @@ import {
 import { UserService } from './user.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
-import { RequiredPermission } from 'src/auth/auth.guard';
-import { Permission } from 'src/role/enums/permission.enum';
+import { RequiredPermission } from '../auth/auth.guard';
+import { Permission } from '../role/enums/permission.enum';
 
 @Controller('users')
 export class UserController {

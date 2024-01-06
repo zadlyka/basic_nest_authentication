@@ -10,7 +10,7 @@ import {
 import { RoleService } from './role.service';
 import { CreateRoleDto } from './dto/create-role.dto';
 import { UpdateRoleDto } from './dto/update-role.dto';
-import { RequiredPermission } from 'src/auth/auth.guard';
+import { RequiredPermission } from '../auth/auth.guard';
 import { Permission } from './enums/permission.enum';
 
 @Controller('roles')

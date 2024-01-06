@@ -1,8 +1,8 @@
 import { DataSource } from 'typeorm';
 import { Seeder } from 'typeorm-extension';
-import { Role } from 'src/role/entities/role.entity';
-import { Permission } from 'src/role/enums/permission.enum';
-import { RoleId } from 'src/role/enums/role-id.enum';
+import { Role } from '../role/entities/role.entity';
+import { Permission } from '../role/enums/permission.enum';
+import { RoleId } from '../role/enums/role-id.enum';
 
 export class Role1704523572371 implements Seeder {
   track = false;
