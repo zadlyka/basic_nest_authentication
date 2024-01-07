@@ -4,6 +4,7 @@ import { UpdateRoleDto } from './dto/update-role.dto';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Role } from './entities/role.entity';
 import { Repository } from 'typeorm';
+import { FilterOperator, PaginateQuery, paginate } from 'nestjs-paginate';
 
 @Injectable()
 export class RoleService {
@@ -17,8 +18,16 @@ export class RoleService {
     return this.roleRepository.save(role);
   }
 
-  findAll() {
-    return this.roleRepository.find();
+  findAll(query: PaginateQuery) {
+    return paginate(query, this.roleRepository, {
+      sortableColumns: ['id', 'name'],
+      nullSort: 'last',
+      defaultSortBy: [['id', 'DESC']],
+      searchableColumns: ['name'],
+      filterableColumns: {
+        name: [FilterOperator.EQ],
+      },
+    });
   }
 
   findOne(id: string) {

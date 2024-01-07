@@ -12,6 +12,7 @@ import { CreateRoleDto } from './dto/create-role.dto';
 import { UpdateRoleDto } from './dto/update-role.dto';
 import { RequiredPermission } from '../auth/auth.guard';
 import { Permission } from './enums/permission.enum';
+import { Paginate, PaginateQuery } from 'nestjs-paginate';
 
 @Controller('roles')
 export class RoleController {
@@ -25,8 +26,8 @@ export class RoleController {
 
   @Get()
   @RequiredPermission(Permission.ReadRole)
-  findAll() {
-    return this.roleService.findAll();
+  findAll(@Paginate() query: PaginateQuery) {
+    return this.roleService.findAll(query);
   }
 
   @Get(':id')

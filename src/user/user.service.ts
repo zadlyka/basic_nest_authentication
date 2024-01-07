@@ -5,6 +5,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { User } from './entities/user.entity';
 import { Repository } from 'typeorm';
 import * as bcrypt from 'bcrypt';
+import { FilterOperator, PaginateQuery, paginate } from 'nestjs-paginate';
 
 @Injectable()
 export class UserService {
@@ -23,8 +24,17 @@ export class UserService {
     return this.userRepository.save(user);
   }
 
-  findAll() {
-    return this.userRepository.find();
+  findAll(query: PaginateQuery) {
+    return paginate(query, this.userRepository, {
+      sortableColumns: ['id', 'name'],
+      nullSort: 'last',
+      defaultSortBy: [['id', 'DESC']],
+      searchableColumns: ['name'],
+      filterableColumns: {
+        roleId: [FilterOperator.EQ, FilterOperator.IN],
+        name: [FilterOperator.EQ],
+      },
+    });
   }
 
   findOne(id: string) {
