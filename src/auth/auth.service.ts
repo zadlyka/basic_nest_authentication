@@ -4,6 +4,7 @@ import { UserService } from '../user/user.service';
 import { LoginDto } from './dto/login.dto';
 import * as bcrypt from 'bcrypt';
 import { JwtService } from '@nestjs/jwt';
+import { RoleId } from 'src/role/enums/role-id.enum';
 
 @Injectable()
 export class AuthService {
@@ -13,7 +14,7 @@ export class AuthService {
   ) {}
 
   register(registerDto: RegisterDto) {
-    return this.userService.create(registerDto);
+    return this.userService.create({ ...registerDto, roleId: RoleId.User });
   }
 
   async login(loginDto: LoginDto) {
