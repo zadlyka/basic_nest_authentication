@@ -1,6 +1,6 @@
 import { HttpAdapterHost, NestFactory } from '@nestjs/core';
-import { AppModule } from './app.module';
 import { ValidationPipe } from '@nestjs/common';
+import { AppModule } from './app.module';
 import { TypeOrmExceptionFilter } from './common/filters/typeorm-exception.filter';
 import { PgExceptionFilter } from './common/filters/pg-exception.filter';
 

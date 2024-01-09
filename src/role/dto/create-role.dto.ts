@@ -1,6 +1,6 @@
 import { IsEnum, IsNotEmpty, IsString } from 'class-validator';
-import { Permission } from '../enums/permission.enum';
 import { Transform } from 'class-transformer';
+import { Permission } from '../enums/permission.enum';
 export class CreateRoleDto {
   @IsString()
   @IsNotEmpty()

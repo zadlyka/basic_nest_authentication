@@ -20,6 +20,12 @@ export class AuthController {
     return this.authService.login(loginDto);
   }
 
+  @Post('refresh')
+  refresh(@Req() request: Request) {
+    const { user }: any = request;
+    return this.authService.generateToken(user.id);
+  }
+
   @Get()
   info(@Req() request: Request) {
     const { user }: any = request;
