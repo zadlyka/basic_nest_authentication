@@ -19,12 +19,12 @@
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "typeorm": "ts-node ./node_modules/typeorm/cli",
-    "migration:run": "npm run typeorm migration:run -- -d ./src/config/typeorm.config.ts",
-    "migration:generate": "npm run typeorm -- -d ./src/config/typeorm.config.ts migration:generate",
+    "migration:run": "npm run typeorm migration:run -- -d ./src/common/configs/typeorm.config.ts",
+    "migration:generate": "npm run typeorm -- -d ./src/common/configs/typeorm.config.ts migration:generate",
     "seed:create": "ts-node ./node_modules/typeorm-extension/bin/cli.cjs seed:create --name",
-    "seed:run": "ts-node ./node_modules/typeorm-extension/bin/cli.cjs seed:run -d ./src/config/typeorm.config.ts",
-    "db:create": "ts-node ./node_modules/typeorm-extension/bin/cli.cjs db:create -d ./src/config/typeorm.config.ts",
-    "db:drop": "ts-node ./node_modules/typeorm-extension/bin/cli.cjs db:drop -d ./src/config/typeorm.config.ts"
+    "seed:run": "ts-node ./node_modules/typeorm-extension/bin/cli.cjs seed:run -d ./src/common/configs/typeorm.config.ts",
+    "db:create": "ts-node ./node_modules/typeorm-extension/bin/cli.cjs db:create -d ./src/common/configs/typeorm.config.ts",
+    "db:drop": "ts-node ./node_modules/typeorm-extension/bin/cli.cjs db:drop -d ./src/common/configs/typeorm.config.ts"
   },
   "dependencies": {
     "@nestjs/common": "^10.0.0",

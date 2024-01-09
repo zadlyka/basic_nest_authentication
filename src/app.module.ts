@@ -5,12 +5,12 @@ import { JwtModule } from '@nestjs/jwt';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import appConfig from './config/app.config';
 import { UserModule } from './user/user.module';
 import { RoleModule } from './role/role.module';
-import { WrapInterceptor } from './interceptor/wrap.interceptor';
 import { AuthModule } from './auth/auth.module';
 import { AuthGuard } from './auth/auth.guard';
+import { WrapInterceptor } from './common/interceptors/wrap.interceptor';
+import appConfig from './common/configs/app.config';
 
 @Module({
   imports: [
