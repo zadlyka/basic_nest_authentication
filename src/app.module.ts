@@ -1,16 +1,16 @@
+import { APP_GUARD, APP_INTERCEPTOR } from '@nestjs/core';
+import { ConfigModule, ConfigService } from '@nestjs/config';
 import { Module } from '@nestjs/common';
+import { JwtModule } from '@nestjs/jwt';
+import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { ConfigModule, ConfigService } from '@nestjs/config';
 import appConfig from './config/app.config';
-import { TypeOrmModule } from '@nestjs/typeorm';
 import { UserModule } from './user/user.module';
 import { RoleModule } from './role/role.module';
-import { APP_GUARD, APP_INTERCEPTOR } from '@nestjs/core';
-import { WrapInterceptor } from './wrap/wrap.interceptor';
+import { WrapInterceptor } from './interceptor/wrap.interceptor';
 import { AuthModule } from './auth/auth.module';
 import { AuthGuard } from './auth/auth.guard';
-import { JwtModule } from '@nestjs/jwt';
 
 @Module({
   imports: [

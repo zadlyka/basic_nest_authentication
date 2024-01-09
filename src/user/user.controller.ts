@@ -7,12 +7,12 @@ import {
   Param,
   Delete,
 } from '@nestjs/common';
+import { Paginate, PaginateQuery } from 'nestjs-paginate';
 import { UserService } from './user.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { RequiredPermission } from '../auth/auth.guard';
 import { Permission } from '../role/enums/permission.enum';
-import { Paginate, PaginateQuery } from 'nestjs-paginate';
 
 @Controller('users')
 export class UserController {
